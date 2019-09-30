@@ -6,30 +6,31 @@
 		<input type="search" placeholder="Search...">		    	
 		<button>Search</button>
 		<input type="button" value="Imprime esta página" onclick="window.print()">
-		<input type="button" value="Parques Botanicos" onclick="window.print()">
-		<input type="button" value="Aguas termales" onclick="window.print()">
-		<input type="button" value="Marca lo nuestro" onclick="window.print()">
-		<input type="button" value="Mas que turismo" onclick="window.print()">
-		<input type="button" value="Diversidad" onclick="window.print()">
-		<input type="button" value="Contactanos" onclick="window.print()">
-		<input type="button" value="Informacion" onclick="window.print()">
+		<input type="button" value="Parques Botanicos" onclick="window.search()">
+		<input type="button" value="Aguas termales" onclick="window.search()">
+		<input type="button" value="Marca lo nuestro" onclick="window.search()">
+		<input type="button" value="Mas que turismo" onclick="window.search()">
+		<input type="button" value="Diversidad" onclick="window.search()">
+		<input type="button" value="Contactanos" onclick="window.search()">
+		<input type="button" value="Informacion" onclick="window.search()">
 		
 		<div id="vinc"><a href="https://www.youtube.com/watch?v=GmiZ0F1Ounw" 
-onmouseover="javascript: void(document.getElementById('vinc').style.fontSize='1em')" 
-onmouseout="javascript: void(document.getElementById('vinc').style.fontSize='1em')">
-Parques Protegidos de Honduras</div>
+		onmouseover="javascript: void(document.getElementById('vinc').style.fontSize='1em')" 
+		onmouseout="javascript: void(document.getElementById('vinc').style.fontSize='1em')">
+		Parques Protegidos de Honduras</div>
 
 	</form>
-</section>
+	</section>
 	<p><b><font size = "5", color = "purple">CLASE PROGRAMACION APLICADA A LOS SISTEMAS DE INFORMACION GEOGRAFICA (CTE 524)</font></b>, <br><font size = 5, color = "purple"></font></br>EN CENTROAMERICA HONDURAS</br></p><br></br>
 	
 	<marquee color = "purple"  BEHAVIOR=ALTERNATE>BIENVENIDO A MI VISOR WEB SITIOS DE RECREACION PARQUES TURISTICOS DE HONDURAS </marquee>
 	
 	<font marquee size = "5", color = "blue", >PARQUES TURISTICOS DE HONDURAS </marquee></font><br></br>
 	
-	<img src = "https://www.bosquesdelmundo.org/files/International.forestsoftheworld.org/Kort/St%C3%B8rre/Hon.esp.1187x768.jpg" width="200" height="200"/></br>
+	<img src = "https://www.bosquesdelmundo.org/files/International.forestsoftheworld.org/Kort/St%C3%B8rre/Hon.esp.1187x768.jpg" width="200" height="200"/><img src = "http://faces.unah.edu.hn/astro/laafvirtual/theme/splash/pix/logoFaces_sinfondo_peq.png" width="200" height="200"/><img src = "https://www.unah.edu.hn/themes/portalunah/assets/images/logo-unah.png" width="200" height="200"/><img src = "https://escuelapce.com/wp-content/uploads/2019/05/LogoAlcala.jpg" width="200" height="200"/><img src = "https://www.underconsideration.com/brandnew/archives/honduras_logo_detail.png" width="200" height="200"/><img src = "https://www.flagsonline.it/uploads/2016-6-6/420-272/honduras.jpg" width="200" height="200"/><img src = "https://ichef.bbci.co.uk/news/660/cpsprodpb/16F77/production/_95717049_gettyimages-511857324.jpg" width="200" height="200"/>
 	
-	<font face="Comic Sans MS">Maestría en Gestión y Ordenamiento Territorial MOGT5/Universidad Nacional Autónoma de Honduras (UNAH)</font><br></br>
+	
+	<br><font face="Comic Sans MS">Maestría en Gestión y Ordenamiento Territorial MOGT5/Universidad Nacional Autónoma de Honduras (UNAH)</font><br></br>
 	<br>
 	
 		<head>
@@ -72,6 +73,12 @@ Parques Protegidos de Honduras</div>
 		<!--Map center-->
 		<link rel="stylesheet" href="leaflet.viewcenter.css" />
 		<script src="leaflet.viewcenter.js"></script>
+		<script src="Leaflet.MakiMarkers.js"></script>
+		
+		
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" 
+		integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" 
+		crossorigin=""/>
 		
 		</head>
 	
@@ -142,6 +149,35 @@ Parques Protegidos de Honduras</div>
 		maxBounds: [[14.085190, -87.186297],[14.080877, -87.195965]]
 		});
 		
+		<!--Comentario: marcadores de L.icon-->
+		var icono1 = L.icon({
+		iconUrl: 'parque_arqueologico_copan-1-810x540.png',
+		iconSize: [50, 70],
+		});
+		var marker1= L.marker([14.849725, -89.146783], {icon: icono1}).addTo(mapa);
+		marker1.bindPopup("COPAN RUINAS");
+		
+		var icono2 = L.icon({
+		iconUrl: 'https://diarioroatan.com/wp-content/uploads/2018/02/Jeannette-Kawas-parque-nacional-honduras-1.jpg',
+		iconSize: [50, 70],
+		});
+		var marker2= L.marker([15.146207, -84.663616], {icon: icono1}).addTo(mapa);
+		marker2.bindPopup("GRACIAS A DIOS");
+		
+		var icono3 = L.icon({
+		iconUrl: 'areas-protegidas-de-honduras-1-638.png',
+		iconSize: [50, 70],
+		});
+		var marker3= L.marker([14.294536, -85.783882], {icon: icono1}).addTo(mapa);
+		marker3.bindPopup("OLANCHO");
+		
+		var icono4 = L.icon({
+		iconUrl: 'z4.jpeg',
+		iconSize: [50, 70],
+		});
+		var marker4= L.marker([ 14.978971, -86.625919], {icon: icono1}).addTo(mapa);
+		marker4.bindPopup("OLANCHO");
+		
 		var hn = L.tileLayer.wms("http://localhost:8080/geoserver/opengeo/wms?service=WMS", {
 		layers: "opengeo:departamentos",
 		format: 'image/png',
@@ -152,9 +188,11 @@ Parques Protegidos de Honduras</div>
 		
 		var ESRI = L.esri.basemapLayer('NationalGeographic');
 		
-		var ESRI_topo = L.esri.basemapLayer('ShadedRelief');
+		var ESRI_topo = L.esri.basemapLayer('Terrain');
 	
-		var ESRI_2 = L.esri.basemapLayer('ImageryFirefly');
+		var ESRI_2 = L.esri.basemapLayer('Physical');
+		
+		var ESRI_3 = L.esri.basemapLayer('Streets');
 		
 		
 		var capasBase = {
@@ -174,6 +212,9 @@ Parques Protegidos de Honduras</div>
 			};
 						
 		new L.control.layers(capasBase, capasOverlay,{collapsed:false}).addTo(mapa);
+		
+		L.MakiMarkers.accessToken = "pk.eyJ1IjoibGl6YS1rYWZhdGkyMDE5IiwiYSI6ImNrMDV0ejdxOTAwY3IzYm90azl5bWFwYm4ifQ.-f3pA2idzqzRASVWgoQZvg";
+			
 			
 		var plazacentral = L.marker([15.581156, -84.976338]);
 		mapa.addLayer(plazacentral);
@@ -254,6 +295,10 @@ Parques Protegidos de Honduras</div>
 		var inl = L.marker([15.618948, -86.862183]);
 		mapa.addLayer(inl);
 		inl.bindPopup("NATIONAL PARK PICO BONITO");
+		
+		var inl = L.marker([14.871674, -87.982476]);
+		mapa.addLayer(inl);
+		inl.bindPopup("LAGO DE YOJOA");
 		
 		new L.Control.Zoom({ position: 'topright'}).addTo(mapa);
 		
